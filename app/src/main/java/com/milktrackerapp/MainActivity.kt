@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
@@ -25,7 +26,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.milktrackerapp.ui.components.AddRecordDialog
@@ -56,6 +60,10 @@ fun MilkTrackerApp() {
     var showClearDialog by remember { mutableStateOf(false) }
     val viewModel: BottleViewModel = viewModel()
 
+    val records by viewModel.records.collectAsStateWithLifecycle()
+    val lastFeedTime by viewModel.lastFeedTime.collectAsStateWithLifecycle()
+    val totalToday by viewModel.totalToday.collectAsStateWithLifecycle()
+
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         containerColor = MaterialTheme.colorScheme.background,
@@ -70,9 +78,9 @@ fun MilkTrackerApp() {
                 if (selectedTab == 0) {
                     item {
                         TopInfoCard(
-                            lastFeedTime = viewModel.lastFeedTime.collectAsState().value,
-                            lastAmount = viewModel.records.collectAsState().value.firstOrNull()?.amount,
-                            totalToday = viewModel.totalToday.collectAsState().value
+                            lastFeedTime = lastFeedTime,
+                            lastAmount = records.firstOrNull()?.amount,
+                            totalToday = totalToday
                         )
                     }
                     
@@ -89,14 +97,14 @@ fun MilkTrackerApp() {
                     when (selectedTab) {
                         0 -> {
                             RecordList(
-                                records = viewModel.records.collectAsState().value,
+                                records = records,
                                 onDelete = { viewModel.deleteRecord(it) },
                                 onUpdate = { id, amount -> viewModel.updateRecord(id, amount) }
                             )
                         }
                         1 -> {
                             StatisticsTab(
-                                records = viewModel.records.collectAsState().value
+                                records = records
                             )
                         }
                     }

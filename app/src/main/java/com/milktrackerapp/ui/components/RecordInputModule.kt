@@ -447,7 +447,7 @@ fun TimePickerWheel(
             // 使用LazyColumn实现平滑滚动
             val listState = androidx.compose.foundation.lazy.rememberLazyListState(
                 initialFirstVisibleItemIndex = value - minValue,
-                initialFirstVisibleItemScrollOffset = -28
+                initialFirstVisibleItemScrollOffset = 0
             )
             
             // 计算当前中间位置的项目索引
@@ -462,7 +462,7 @@ fun TimePickerWheel(
                     centerIndex.value = targetIndex
                     listState.animateScrollToItem(
                         index = targetIndex,
-                        scrollOffset = -28
+                        scrollOffset = 0
                     )
                     isProgrammaticScroll.value = false
                 }
@@ -520,7 +520,7 @@ fun TimePickerWheel(
                         centerIndex.value = closestItem.index
                         listState.animateScrollToItem(
                             index = closestItem.index,
-                            scrollOffset = -28
+                            scrollOffset = 0
                         )
                         // 同步更新value
                         val newValue = items[closestItem.index]
@@ -537,8 +537,8 @@ fun TimePickerWheel(
                 modifier = Modifier.fillMaxSize(),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 contentPadding = androidx.compose.foundation.layout.PaddingValues(
-                    top = 40.dp,
-                    bottom = 40.dp
+                    top = 52.dp,
+                    bottom = 52.dp
                 )
             ) {
                 items(totalItems) { index ->
