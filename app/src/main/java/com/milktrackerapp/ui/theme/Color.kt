@@ -3,7 +3,7 @@ package com.milktrackerapp.ui.theme
 import androidx.compose.ui.graphics.Color
 
 // 主色调 - 温柔樱花粉
-val Primary = Color(0xFAFF6BAA) // 柔和樱花粉
+val Primary = Color(0xFFFFB6C1) // 柔和樱花粉
 val PrimaryLight = Color(0xFFFFF0F5) // 极浅樱花粉
 val PrimaryDark = Color(0xFAFF6BAA) // 较深樱花粉
 
