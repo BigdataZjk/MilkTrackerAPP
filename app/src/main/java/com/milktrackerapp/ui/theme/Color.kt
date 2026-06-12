@@ -2,39 +2,26 @@ package com.milktrackerapp.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-// 主色调 - 温柔樱花粉
-val Primary = Color(0xFFFF1493) // 柔和樱花粉
-val PrimaryLight = Color(0xFFFFF0F5) // 极浅樱花粉
-val PrimaryDark = Color(0xFAFF6BAA) // 较深樱花粉
+// 底色
+val Page = Color(0xFFF5F6F8)
+val Tile = Color(0xFFFFFFFF)
+val Frost = Color(0xFFEEF0F3)
 
-// 辅助色 - 柔和薰衣草紫
-val Secondary = Color(0xFFD8BFD8) // 柔和淡紫色
-val SecondaryLight = Color(0xFFFFFAFF) // 极浅淡紫色
-val SecondaryDark = Color(0xFFC9A0DC) // 较深淡紫色
+// 主色 — 商务蓝
+val Navy = Color(0xFF336699)
+val NavyMuted = Color(0xFFECF1F6)
+val NavyGhost = Color(0xFFF7F9FB)
 
-// 强调色 - 温暖蜜桃色
-val Accent = Color(0xFFFFE4B5) // 柔和蜜桃色
-val AccentLight = Color(0xFFFFF9EF) // 极浅蜜桃色
-val AccentDark = Color(0xFFFFDAB9) // 较深蜜桃色
+// 文字
+val Ink = Color(0xFF181A1D)
+val Slate = Color(0xFF5F6B7A)
+val Pebble = Color(0xFF8F98A3)
 
-// 中性色 - 纯净柔和
-val Background = Color(0xFFFFFBF7) // 柔和米白色背景
-val Surface = Color(0xFFFFFEFC) // 极浅米白色表面
-val SurfaceVariant = Color(0xFFFFF6F0) // 浅米色表面变体
+// 功能色
+val Danger = Color(0xFFD14343)
+val Warning = Color(0xFFD97A2E)
+val Caution = Color(0xFFB0962A)
+val Safe = Color(0xFF3D8B63)
 
-// 文字颜色 - 确保清晰可见
-val OnPrimary = Color(0xFFFFFFFF) // 主色上的白色文字
-val OnSecondary = Color(0xFFFFFFFF) // 辅助色上的白色文字
-val OnBackground = Color(0xFF5C4033) // 背景上的暖棕色文字
-val OnSurface = Color(0xFF5C4033) // 表面上的暖棕色文字
-val OnSurfaceVariant = Color(0xFF8B7355) // 表面变体上的浅棕色文字
-
-// 边框和分割线
-val Border = Color(0xFFFFE4E1) // 浅粉色边框颜色
-val Divider = Color(0xFFFFE4E1) // 浅粉色分割线颜色
-
-// 状态颜色
-val Error = Color(0xFFFF6B6B) // 柔和错误颜色
-val Success = Color(0xFF98D8AA) // 柔和成功颜色
-val Warning = Color(0xFFFFD93D) // 柔和警告颜色
-val Info = Color(0xFF74C0FC) // 柔和信息颜色
+// 线条
+val Rule = Color(0xFFE0E4E9)
